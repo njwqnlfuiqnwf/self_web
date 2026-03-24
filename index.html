@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="AI 学习笔记 - 分享学习过程中的知识积累与问题解决方法，涵盖深度学习、Python、Web 开发、Docker、Git、Redis 等技术领域">
+    <meta name="keywords" content="AI, 人工智能, 深度学习, 机器学习, Python, Web 开发, Docker, Git, Redis, 技术博客">
+    <meta name="author" content="AI 学习笔记">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://yourusername.github.io/blog/">
+    <meta property="og:title" content="AI 学习笔记 - 探索 AI 的无限可能">
+    <meta property="og:description" content="分享学习过程中的知识积累与问题解决方法">
+    <meta property="og:image" content="https://yourusername.github.io/blog/og-image.png">
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://yourusername.github.io/blog/">
+    <meta property="twitter:title" content="AI 学习笔记 - 探索 AI 的无限可能">
+    <meta property="twitter:description" content="分享学习过程中的知识积累与问题解决方法">
+    <meta property="twitter:image" content="https://yourusername.github.io/blog/og-image.png">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+    
+    <title>AI 学习笔记 - 探索 AI 的无限可能</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <h1 class="logo">
+                <a href="index.html">AI 学习笔记</a>
+            </h1>
+            <nav class="nav">
+                <a href="index.html" class="nav-link active">首页</a>
+                <a href="about.html" class="nav-link">关于</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="main">
+        <section class="hero">
+            <div class="container">
+                <h2 class="hero-title">探索 AI 的无限可能</h2>
+                <p class="hero-subtitle">分享学习过程中的知识积累与问题解决方法</p>
+                <div class="share-buttons">
+                    <button class="share-btn" onclick="shareOnTwitter()">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z"/>
+                        </svg>
+                        分享到 Twitter
+                    </button>
+                    <button class="share-btn" onclick="shareOnWeChat()">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M8.5,13.5A1.5,1.5 0 1,1 10,12A1.5,1.5 0 0,1 8.5,13.5M7.5,9C5,9 3,7 3,4.5C3,2 5,0 7.5,0C10,0 12,2 12,4.5C12,7 10,9 7.5,9M16.5,24C13.5,24 11,22 11,19.5C11,17 13.5,15 16.5,15C19.5,15 22,17 22,19.5C22,22 19.5,24 16.5,24Z"/>
+                        </svg>
+                        分享到微信
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <section class="tags-section">
+            <div class="container">
+                <h3 class="section-title">按标签浏览</h3>
+                <div class="tags-container" id="tags-container"></div>
+            </div>
+        </section>
+
+        <section class="posts-section">
+            <div class="container">
+                <h3 class="section-title">最新文章</h3>
+                <div class="posts-grid" id="posts-grid"></div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2026 AI 学习笔记. All rights reserved.</p>
+            <p class="share-url">
+                分享链接: <span id="current-url"></span>
+                <button class="copy-btn" onclick="copyCurrentUrl()">复制</button>
+            </p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <script src="js/data.js"></script>
+    <script src="js/main.js"></script>
+    <script>
+        // 分享到 Twitter
+        function shareOnTwitter() {
+            const text = 'AI 学习笔记 - 探索 AI 的无限可能';
+            const url = window.location.href;
+            const twitterUrl = `https://twitter.com/intent/tweet?text=${encodeURIComponent(text)}&url=${encodeURIComponent(url)}`;
+            window.open(twitterUrl, '_blank');
+        }
+
+        // 分享到微信（显示二维码）
+        function shareOnWeChat() {
+            alert('请截图分享到微信，或使用微信扫一扫功能扫描此页面');
+        }
+
+        // 复制当前页面 URL
+        function copyCurrentUrl() {
+            const url = window.location.href;
+            navigator.clipboard.writeText(url).then(() => {
+                alert('链接已复制到剪贴板！');
+            }).catch(err => {
+                console.error('复制失败:', err);
+                alert('复制失败，请手动复制地址栏的链接');
+            });
+        }
+
+        // 显示当前 URL
+        document.getElementById('current-url').textContent = window.location.href;
+    </script>
+</body>
+</html>

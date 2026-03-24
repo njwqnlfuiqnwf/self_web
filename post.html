@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI 学习笔记 - 文章详情</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <h1 class="logo">
+                <a href="index.html">AI 学习笔记</a>
+            </h1>
+            <nav class="nav">
+                <a href="index.html" class="nav-link">首页</a>
+                <a href="about.html" class="nav-link">关于</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="main">
+        <article class="article">
+            <div class="container">
+                <a href="index.html" class="back-link">← 返回首页</a>
+                <header class="article-header">
+                    <h1 class="article-title" id="article-title"></h1>
+                    <div class="article-meta">
+                        <span class="article-date" id="article-date"></span>
+                        <span class="article-tags" id="article-tags"></span>
+                    </div>
+                </header>
+                <div class="article-content" id="article-content">
+                    <!-- Markdown 内容将在这里渲染 -->
+                </div>
+            </div>
+        </article>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2026 AI 学习笔记. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <script src="js/data.js"></script>
+    <script src="js/post.js"></script>
+</body>
+</html>
